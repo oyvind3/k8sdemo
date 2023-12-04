@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  oyvind-web2
+  namespace: default
+  labels:
+    app:  oyvind-web2
+spec:
+  selector:
+    matchLabels:
+      app: oyvind-web2
+  template:
+    metadata:
+      labels:
+        app:  oyvind-web2
+    spec:
+      containers:
+      - name:  oyvind-web2
+        image:  fixature/cloudresumeoncontainer:v1-amd64
+        resources:
+          requests:
+            cpu: 10m
+            memory: 10Mi
+          limits:
+            cpu: 10m
+            memory: 10Mi
+        ports:
+        - containerPort:  80
+          name:  oyvind-web2
+

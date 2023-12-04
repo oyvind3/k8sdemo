@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: skdemo01
+  name: skdemo01
+spec:
+  containers:
+  - image: fixature/oyvindk8sdemo:v1
+    name: skdemo01
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

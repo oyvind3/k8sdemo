@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dep-oyvind-web1
+  name: dep-oyvind-web1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dep-oyvind-web1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dep-oyvind-web1
+    spec:
+      containers:
+      - image: fixature/cloudresumeoncontainer:v1-amd64
+        name: cloudresumeoncontainer
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi
+          limits:
+            cpu: 20m
+            memory: 40Mi
+        resources: {}
+status: {}
