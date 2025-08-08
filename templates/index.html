@@ -10,6 +10,12 @@
             <p>
                 Deployment is running on <span class="heart"></span>{{ pod_name }}
             </p>
+            {% if user %}
+            <p>Signed in as {{ user.get('name') }}</p>
+            <a href="{{ url_for('logout') }}">Sign out</a>
+            {% else %}
+            <a href="{{ url_for('login') }}">Sign in with Microsoft</a>
+            {% endif %}
         </header>
     </div>
 </body>

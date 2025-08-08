@@ -11,3 +11,19 @@ To run this application:
 ```
 flask --debug run
 ```
+
+### Azure AD Authentication
+
+This sample integrates with [MSAL for Python](https://github.com/AzureAD/microsoft-authentication-library-for-python) to support signing in with Azure Active Directory.
+
+Set the following environment variables before running the app:
+
+```
+export AZURE_CLIENT_ID=<application_client_id>
+export AZURE_CLIENT_SECRET=<application_client_secret>
+# Optional: use a tenant-specific authority
+# export AZURE_AUTHORITY="https://login.microsoftonline.com/<tenant_id>"
+export FLASK_SECRET=<random string>
+```
+
+Start the app and visit `/login` to sign in or `/logout` to end the session.
